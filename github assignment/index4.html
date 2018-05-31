@@ -1,0 +1,51 @@
+<!-- Get the values of First and Last name from the following form. 
+
+Then display those values on the web page like so:
+
+Hello Curtis Jackson
+
+ 
+
+< p id=“display” >< /p >
+
+< form >
+
+First name: < input type="text" id="fname" />< br >
+
+Last name: < input type="text" id="lname" />< br >
+
+< input type="button" value="Submit" onclick="getFormValue()" />
+
+< /form > 
+
+My interpretation :
+some statement must ask the first and last name    				 		Please tell me your First and Last Name
+there sheould be a place a user can place the first annd last name 		placeholder and variable to enter names 
+the form should be submitted 											submit the names value into placeholder (?)
+and the fucntion should be executed 									return message resulted from function 
+
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<h2 id="name">what is your name</h2>
+		<input onclick="getFormValue()" type="button" value="Click to Display">
+
+		<script>
+			function getFormValue(){
+				var fname=prompt("What's your First Name: ")
+				var lname=prompt("What's your Last Name: ")
+				document.getElementById("name").innerHTML="Hello " + fname + " " + lname+".";
+
+			}
+		</script>
+</body>
+</html>
