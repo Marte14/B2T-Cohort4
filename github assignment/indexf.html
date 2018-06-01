@@ -1,31 +1,21 @@
-
-
-[known brand] is making a juice bar where you can use whatever fruit you like
-Consider the following array:
-var fruits = [“apple”, “orange”, “kiwi”];
-Create a button that when clicked
-Prompts user for new fruit and adds it to the array
-Sort the array
-Display elements separated by “ with ” on the web page
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 	<body>
-		<h2>Enter Your Fruit Choices</h2>
-		<input id=fruitsSelection type="button" value="Click To Enter" onclick="addFruit()">
-		<p id=printOnPage>
+		<P id="printOnPage">Enter Your Fruit Choices</P>
+		<input type="button" value="Click To Enter" onclick="addFruit()">
+
 		<script>
 			var fruits=[];
 			
 			function addFruit(){
 				var fruitChoice= prompt("Enter Your Fruit Selection")
-				fruits.unshift(fruitChoice);
+				fruits.push(fruitChoice)
 				fruits.sort();
+				document.getElementById("printOnPage").innerHTML = 'Your Fruit Juice will have '+fruits;
+
 				console.log(fruits);
 
 			}
