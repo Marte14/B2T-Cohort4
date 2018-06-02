@@ -35,7 +35,7 @@
 				var fruitChoice= prompt("Enter Your Fruit Selection")
 				fruits.push(fruitChoice)
 				fruits.sort();
-				document.getElementById("printOnPage").innerHTML ='Your Fruit Juice will have: '+fruits+". Want More Flavors?";
+				document.getElementById("printOnPage").innerHTML ='Your Fruit Juice will have: '+(fruits.join(" with "))+". Want More Flavors?";
 
 				console.log(fruits);
 
