@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<title></title>
+</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6 box">
+					<h5 class= "text" id="name"></h5>
+					<div class="border">
+						<h1 class="text">Make A Juice Of Your Own Inspiration!!</h1>
+						<P class="text" id="printOnPage">Click Below To Enter Up to 1000 Various Fruits</P>
+						<input type="button" value="Add Fruit" onclick="addFruit()" class="btn-block button">
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+		<script>
+
+			var fruits=[];
+			var name=prompt("What's your name: ")
+			document.getElementById("name").innerHTML= name+"  Welcome to The Juice Bar.";
+		
+			function addFruit(){
+				var fruitChoice= prompt("Enter Your Fruit Selection")
+				fruits.push(fruitChoice)
+				fruits.sort();
+				document.getElementById("printOnPage").innerHTML ='Your Fruit Juice will have: '+fruits+". Want More Flavors?";
+
+				console.log(fruits);
+
+			}
+
+			
+	
+		</script>
+
+	</body>
+</html>
