@@ -1,0 +1,34 @@
+.text{
+	text-align: center;
+	font-family: georgia;
+	padding: 30px;
+}
+.marginText{
+	max-width: 200px;
+}
+
+.box{
+padding-top: 100px;
+padding-bottom: 200px;
+padding-left: 30px;
+padding-right: 30px;
+}
+.border{
+	background-color:#3fffb2 ; 
+	padding: 15px;
+	/*border: 1px gray solid;*/
+	box-shadow: 1px 2px #888888;
+	
+} 	
+.insideBox{
+	margin:15px;
+	text-align: center;
+}
+.button { 
+	background-color: #4CAF50; /* Green */ 
+	border: none; 
+	color: white; 
+	padding: 10px 22px; 
+	text-align: center; 
+	text-decoration: none; 
+	display: inline-block ;
