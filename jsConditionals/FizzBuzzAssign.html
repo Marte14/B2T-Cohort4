@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Make a program which iterates the integers from 1 to 100.
+
+For multiples of 3, print "Fizz" instead of the number.
+
+For the multiples of 5, print "Buzz" instead of the number.
+
+For numbers which are multiples of both 3 and 5 print "FizzBuzz" instead of the number.
+
+Output : 1  2 Fizz 4 Buzz  Fizz 7-->
+<html>
+<head>
+	<title>zfizzBuzz</title>
+</head>
+<body>
+	<p id="integers"></p>
+	<script>
+		var integers = 1;
+		while (integers <=100){
+			if(integers%3 == 0){
+				document.getElementById('integers').innerHTML += "fizz"+'<br>';
+			}else if(integers%5 == 0){
+				document.getElementById('integers').innerHTML += "Buzz"+'<br>';
+			}else if(integers%3 == 0 &&  intergers%5 == 0){
+				document.getElementById('integers').innerHTML +="FizzBuzz"+'<br>';
+			}else{
+				document.getElementById('integers').innerHTML += integers+'<br>';
+			}
+			integers++;
+			
+		}
+
+
+		
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
