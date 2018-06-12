@@ -6,18 +6,21 @@
 <body>
 <ul id="colorOrder"></ul>
 	<script>
-	var color: ['blue', 'green','red','orange','violet', 'indigo', 'yellow'];
+	var colors: ['blue', 'green','red','orange','violet', 'indigo', 'yellow'];
 	var o: ['th', 'st', 'nd', 'rd']
 
 
-	for (var i = 0, var pl = 0; i < color.length, pl < o.length; i++, pl++){
-		if(color[i].chartAt(0) == "blue"){
-				document.getElementById('colorOrder').innerHTML +='The '+ (pl+1) + o[pl] + ' choice is ' + color[i] + "."</li>'; 
-			}else if(color[i].chartAt(1) == "green") {
-				document.getElementById('colorOrder').innerHTML +='<li>'+'The '+ (pl+1) + o[pl] + ' choice is ' + color[i] + "."</li>'; 
-			}else if {
-
+	for (var i = 0; i < o.length ; i++){
+		if(o[i] == 1){
+				document.getElementById('colorOrder').innerHTML += '<li>'+ 'The ' + o[i] + ' choice is ' + colors[i+1] + '</li>'; 
+			}else if(o[i] == 2) {
+				document.getElementById('colorOrder').innerHTML += '<li>'+ 'The ' + o[i] + ' choice is ' + colors[i+1] + '</li>'; 
+			}else if(o[i] == 3){
+				document.getElementById('colorOrder').innerHTML += '<li>'+ 'The ' + o[i] + ' choice is ' + colors[i+1] + '</li>';
+			}else{
+				document.getElementById('colorOrder').innerHTML += '<li>'+ 'The ' + o[i] + ' choice is ' + colors[i+1] + '</li>';
 			}
+		}
 	 
 		
 
