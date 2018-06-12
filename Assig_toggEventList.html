@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Task: Toggling Event Listeners
+● Create a button that when clicked changes the button’s text from
+‘ON’ to ‘OFF’ and vice versa
+● Create a box that’s background color is green when the mouse is
+over it and red when it is not
+● The box should only change color when the button’s text is ‘ON’
+● Create your event listeners in JavaScrip 
+
+create a button in Html
+if text on value of button is the same as ON 
+	turn the value to off
+else turn it on
+create a box while/ 
+if green box and button says on is comparible to red box
+then change it to red
+else change it to green
+on mouseenter event listener
+on mouseleave event listener
+
+-------------------------------------------------------------------------->
+
+
+<html>
+<head>
+	<title>Toggling Event Listeners</title>
+</head>
+<body>
+	<style>
+		#box{
+			background-color: red;	
+			margin-top: 20px;
+			margin-left: 20px;
+			height: 250px;
+			width: 250px;
+			
+		}
+
+	</style>
+		
+		<input id= "status" type="button" value="OFF">
+		<div id="box"></div>
+			
+	<script>
+				
+		var onoroff = document.getElementById("status");
+		onoroff.addEventListener('click',function(){
+			if (onoroff.value =="OFF"){
+					onoroff.value="ON";
+			}else{
+				onoroff.value = "OFF";
+			}
+
+		})
+
+		var colorBox = document.getElementById("box");
+		colorBox.addEventListener('mouseover',function(){
+			if (onoroff.value =="ON"){
+					colorBox.style.backgroundColor= "pink";
+			}
+		})
+
+		colorBox.addEventListener('mouseleave',function(){
+			if (onoroff.value =="ON"){
+					colorBox.style.backgroundColor="green";
+			}
+		})
+				
+
+				//in this code remember that all if statements must be closed. i am using anonymous functions in each if statement. I have created a var 'onoroff' with element inside, to help min typing and improve readability. 
+		
+		
+
+
+	</script>
+
+</body>
+</html>
+
