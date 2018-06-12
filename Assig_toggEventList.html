@@ -25,55 +25,55 @@ on mouseleave event listener
 <head>
 	<title>Toggling Event Listeners</title>
 </head>
-<body>
-	<style>
-		#box{
-			background-color: red;	
-			margin-top: 20px;
-			margin-left: 20px;
-			height: 250px;
-			width: 250px;
-			
-		}
-
-	</style>
-		
-		<input id= "status" type="button" value="OFF">
-		<div id="box"></div>
-			
-	<script>
+	<body>
+		<style>
+			#box{
+				background-color: red;	
+				margin-top: 20px;
+				margin-left: 20px;
+				height: 250px;
+				width: 250px;
 				
-		var onoroff = document.getElementById("status");
-		onoroff.addEventListener('click',function(){
-			if (onoroff.value =="OFF"){
-					onoroff.value="ON";
-			}else{
-				onoroff.value = "OFF";
 			}
 
-		})
-
-		var colorBox = document.getElementById("box");
-		colorBox.addEventListener('mouseover',function(){
-			if (onoroff.value =="ON"){
-					colorBox.style.backgroundColor= "pink";
-			}
-		})
-
-		colorBox.addEventListener('mouseleave',function(){
-			if (onoroff.value =="ON"){
-					colorBox.style.backgroundColor="green";
-			}
-		})
+		</style>
+			
+			<input id= "status" type="button" value="OFF">
+			<div id="box"></div>
 				
+		<script>
+					
+			var onoroff = document.getElementById("status");
+			onoroff.addEventListener('click',function(){
+				if (onoroff.value =="OFF"){
+						onoroff.value="ON";
+				}else{
+						onoroff.value = "OFF";
+				}
 
-				//in this code remember that all if statements must be closed. i am using anonymous functions in each if statement. I have created a var 'onoroff' with element inside, to help min typing and improve readability. 
-		
-		
+			})
+
+			var colorBox = document.getElementById("box");
+			colorBox.addEventListener('mouseover',function(){
+				if (onoroff.value =="ON"){
+						colorBox.style.backgroundColor= "pink";
+				}
+			})
+
+			colorBox.addEventListener('mouseleave',function(){
+				if (onoroff.value =="ON"){
+						colorBox.style.backgroundColor="green";
+				}
+			})
+					
+
+					//in this code remember that all if statements must be closed. i am using anonymous functions in each if statement. I have created a var 'onoroff' with element inside, to help min typing and improve readability. 
+			
+			
 
 
-	</script>
+		</script>
 
-</body>
+	</body>
 </html>
 
