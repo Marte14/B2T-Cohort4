@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe Creator Storer </title>
+</head>
+<body>
+	<input id= "dishname" type="text" placeholder="Dish Name">
+	<input id= "ingredients" type="text" placeholder="Enter Ingredients separated by commas">
+	<input id="timer" type="number" placeholder = "Duration">
+	<input type="button" onClick="saveData()" value ="Save to Cookbook">
+	<!-- value placeholders are attributes -->
+	<ul id= 'display'></ul>
+	<script>
+		var cookBook = []; //array created to hold the many recipes objects that will be inputed
+
+		function recipe(){
+			return{
+				name: document.getElementById('dishname').value,//value is because we need to get  a value back
+				ingredients: document.getElementById('ingredients').value.split(','),// split to separate the string as diff ingredients
+				duration: document.getElementById('timer').value,
+				dateCreated: new Date().toString() // to string beacuse we dont want objects w diff properties , we just want the date
+
+				// we need to get a value for this . i can get it from an input or I can create it from the parameters. in this case from input and thus we need to access the DOM . if I want to save this value into my empty obj 
+			};// I want it to give me a value
+		}
+//anything that is a var can be look up on console 
+		function saveData(){
+				cookBook.push(recipe() );//recipe function is returning an object and when we call it on this line it will push it to the array
+				alert(cookBook[cookBook.length - 1].name + " has been added!");// the length of the array is four but the index can only see 0,1,2,3 and so in code I must spec that I must remove 1 to get the real final value as per the index order of computers.
+				displayCookBook();
+
+		}
+		//function for this new task of displaying the recipes in cookbook
+		function displayCookBook(){
+			 document.getElementById('display').innerHTML = ''; 
+
+			//we need an element to hold all this text. one could use a div but trey says he prefers text elements. 
+			for(var i=0; i<cookBook.length; i++){// this i is that element 
+				document.getElementById('display').innerHTML += '<li>' +cookBook[i].name + "includes" + cookBook[i].ingredients.join(' and ') + ". It takes "+ 
+				cookBook[i].duration + ' to cook</li>';
+			}//get array cookbook info on  indexed array item .specifically property .name 
+		}
+
+
+	</script>
+
+
+
+</body>
+</html>
+<!-- 
+	Recipes!
+		Name of Dish
+		List of Ingridients
+		Preparation Time
+
+	3 inputs needed for the recipes properties // inputs are on html docs because its where the client side can enter info
+	button to save recipes
+		to add to an array/to store it in our cookBook
+
+	search for a specific recipe within cook book 
+		edit it 
+		delete it 
+
+	Display list of recipes
+		name includes (ingredients separated by 'and'). It takes duration to cook. 
+		go through cookbook (loop thru array )
+			getting recipes name, ingredients, duration
+
+			//what will I do for the incrementation of the loop.
+ -->

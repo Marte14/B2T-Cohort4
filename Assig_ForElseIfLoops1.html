@@ -9,8 +9,9 @@
 		var names = ['Maria', 'Pablo','Daffney','Bugs','Peter','John','Paul'];
 		for (var i= 0; i < names.length; i++){
 				console.log(names[i]+ ' is at index '+i);
+			}
 		var food = ['rice' ,'beans' ,'pizza']
-		for(var i =0; i <names.length; i++){
+		for(var i =0; i < names.length; i++){
 			if(names[i].chartAt(0).toUpperCase() == "P"){
 				document.getElementById('lunchroom').innerHTML +='<li>'+ names[i] + food[0] +'</li>'; 
 
@@ -18,7 +19,7 @@
 				document.getElementById('lunchroom').innerHTML +='<li>'+ names[i] + food[1] +'</li>'; 
 
 			}else{
-				document.getElementById('lunchroom').innerHTML +='<li>'+ names[i] + food[3] +'</li>'; 
+				document.getElementById('lunchroom').innerHTML +='<li>'+ names[i] + food[2] +'</li>'; 
 			}
 	</script>
 </body>
