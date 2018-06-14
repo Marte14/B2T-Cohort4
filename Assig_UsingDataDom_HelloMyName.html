@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2 id="name">Reveal Your Name!</h2>
+		<input onclick="myName()" type="button" value="Click to Play">
+
+
+		<script>
+			function myName(){
+				var name=prompt("What's your name: ")
+				document.getElementById("name").innerHTML="Hello, My name is " + name + '.';
+
+			}
+		</script>
+	</body>
+</html>
