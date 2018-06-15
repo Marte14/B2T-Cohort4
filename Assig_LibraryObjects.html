@@ -1,24 +1,81 @@
 <!DOCTYPE html>
+<!-- //Consider the following array
+
+var library = [
+
+  { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
+
+  { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
+
+  { author: 'Suzanne Collins', title:  'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }
+
+];
+If the reading status is true display “Already read '<insert title>' by <insert author>.”
+If the reading status is false display “You still need to read '<insert title>' by <insert author>.”
+Display results on webpage 
+ 
+
+
+
+header 1 message "Booklist For Book Lovers. Track Books You'Ve Read And Plan To Read."
+3 inputs placeholders for author title and reading status -reading status true or false boolean ?
+input button to 
+	(to add to an array/to store it in our Booklist)
+button 
+	(to search for book by any of blueprint property (?))
+
+(prevent from adding same book more than 1, to uppercase and sort)
+
+
+
+*Display <ul>list</ul> of books(why i put it here)
+		name includes (titel separated by 'and'). reading status/readOrNot. 
+		
+		go through booklist(loop thru array )
+			getting books author, titles, and reading status
+		use join to display ingredients separated by 'and'
+		Display <ul>list</ul> of books/display on webpage as an <li> element
+		
+
+set var to hold object array 
+set var to hol 
+read thru array 
+to check for value true or false
+if true 
+return read '<insert title>' by <insert author>
+else 
+You still need to read '<...
+(while appending previous results)
+use join to display ingredients separated by 'and'
+		display on webpage as an <li> element
+
+-->
 <html>
 <head>
-	<title>Recipe Creator Storer </title>
+	<title>Book list For Book lovers</title>
+	<h1>Booklist For Book Lovers.</h1>
+	<h2>Track Books You'Ve Read And Plan To Read.</h2>
 </head>
 <body>
-	<input id= "dishname" type="text" placeholder="Dish Name">
-	<input id= "ingredients" type="text" placeholder="Enter Ingredients separated by commas">
-	<input id="timer" type="number" placeholder = "Duration">
-	<input type="button" onClick="saveData()" value ="Save to Cookbook">
-	<!-- value placeholders are attributes -->
+	<input id= "author" type="text" placeholder="Book Author">
+	<input id= "title" type="text" placeholder="Enter Book Title">
+	
+	<!-- input should be selecting yes or not (read again) -->
+	<input id="readingStatus" type="boolean" placeholder = "Did You Read This Book?">
+	
+	<input type="button" onClick="saveData()" value ="Save to Booklist">
+	
 	<ul id= 'display'></ul>
+	
 	<script>
-		var cookBook = []; //array created to hold the many recipes objects that will be inputed
+		var booklist = []; //array created to hold the many book objects that will be inserted
 
-		function recipe(){
+		function book(){
 			return{
-				name: document.getElementById('dishname').value,//value is because we need to get  a value back
-				ingredients: document.getElementById('ingredients').value.split(','),// split to separate the string as diff ingredients
-				duration: document.getElementById('timer').value,
-				dateCreated: new Date().toString() // to string beacuse we dont want objects w diff properties , we just want the date
+				author: document.getElementById('author').value,//value is because we need to get  a value back not change it like text
+				title: document.getElementById('title').value,// split to separate the string as diff ingredients
+				readingStat: document.getElementById('readingStatus').value,
+				dateadded: new Date().toString() // to string beacuse we dont want objects w diff properties , we just want the date
 
 				// we need to get a value for this . i can get it from an input or I can create it from the parameters. in this case from input and thus we need to access the DOM . if I want to save this value into my empty obj 
 			};// I want it to give me a value
