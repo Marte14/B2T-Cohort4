@@ -1,128 +1,50 @@
 <!DOCTYPE html>
-<!-- //Consider the following array
-
-var library = [
-
-  { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
-
-  { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
-
-  { author: 'Suzanne Collins', title:  'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }
-
-];
-If the reading status is true display “Already read '<insert title>' by <insert author>.”
-If the reading status is false display “You still need to read '<insert title>' by <insert author>.”
-Display results on webpage 
- 
-
-
-
-header 1 message "Booklist For Book Lovers. Track Books You'Ve Read And Plan To Read."
-3 inputs placeholders for author title and reading status -reading status true or false boolean ?
-input button to 
-	(to add to an array/to store it in our Booklist)
-button 
-	(to search for book by any of blueprint property (?))
-
-(prevent from adding same book more than 1, to uppercase and sort)
-
-
-
-*Display <ul>list</ul> of books(why i put it here)
-		name includes (titel separated by 'and'). reading status/readOrNot. 
-		
-		go through booklist(loop thru array )
-			getting books author, titles, and reading status
-		use join to display ingredients separated by 'and'
-		Display <ul>list</ul> of books/display on webpage as an <li> element
-		
-
-set var to hold object array 
-set var to hol 
-read thru array 
-to check for value true or false
-if true 
-return read '<insert title>' by <insert author>
-else 
-You still need to read '<...
-(while appending previous results)
-use join to display ingredients separated by 'and'
-		display on webpage as an <li> element
-
--->
 <html>
-<head>
-	<title>Book list For Book lovers</title>
+	<head>
+
+
+    <!-- Required Bootstrap meta tags -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<title>Book list For Book lovers</title>
+	
+		
+	</head>
+	<body>
 	<h1>Booklist For Book Lovers.</h1>
 	<h2>Track Books You'Ve Read And Plan To Read.</h2>
-</head>
-<body>
-	<input id= "author" type="text" placeholder="Book Author">
-	<input id= "title" type="text" placeholder="Enter Book Title">
-	
-	<!-- input should be selecting yes or not (read again) -->
-	<input id="readingStatus" type="boolean" placeholder = "Did You Read This Book?">
-	
-	<input type="button" onClick="saveData()" value ="Save to Booklist">
-	
-	<ul id= 'display'></ul>
-	
-	<script>
-		var booklist = []; //array created to hold the many book objects that will be inserted
 
-		function book(){
-			return{
-				author: document.getElementById('author').value,//value is because we need to get  a value back not change it like text
-				title: document.getElementById('title').value,// split to separate the string as diff ingredients
-				readingStat: document.getElementById('readingStatus').value,
-				dateadded: new Date().toString() // to string beacuse we dont want objects w diff properties , we just want the date
+	<ul id="booklist"></ul>
 
-				// we need to get a value for this . i can get it from an input or I can create it from the parameters. in this case from input and thus we need to access the DOM . if I want to save this value into my empty obj 
-			};// I want it to give me a value
+		<script>
+			 //used to hold books
+			var bookList  = [
+
+			  { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
+
+			  { author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
+
+			  { author: 'Suzanne Collins', title:  'Mockingjay: The Final Book of The Hunger Games', readingStatus: false }
+
+			];
+
+			function booklist(){
+				document.getElementById('booklist').innerHTML = '';
+				
+				for(var i=0; i<bookList.length; i++){// this i is that element 
+				if( bookList[i].readingStatus == true){
+					document.getElementById('booklist').innerHTML += '<li>You Have Read ' +bookList[i].title + " Writen by " + bookList[i].author + '</li>';
+				}else{
+					document.getElementById('booklist').innerHTML += '<li>'+'You Have To Still Read ' +bookList[i].title + " by " + bookList[i].author + '</li>';
+				};	
+			}
+			
 		}
-//anything that is a var can be look up on console 
-		function saveData(){
-				cookBook.push(recipe() );//recipe function is returning an object and when we call it on this line it will push it to the array
-				alert(cookBook[cookBook.length - 1].name + " has been added!");// the length of the array is four but the index can only see 0,1,2,3 and so in code I must spec that I must remove 1 to get the real final value as per the index order of computers.
-				displayCookBook();
-
-		}
-		//function for this new task of displaying the recipes in cookbook
-		function displayCookBook(){
-			 document.getElementById('display').innerHTML = ''; 
-
-			//we need an element to hold all this text. one could use a div but trey says he prefers text elements. 
-			for(var i=0; i<cookBook.length; i++){// this i is that element 
-				document.getElementById('display').innerHTML += '<li>' +cookBook[i].name + "includes" + cookBook[i].ingredients.join(' and ') + ". It takes "+ 
-				cookBook[i].duration + ' to cook</li>';
-			}//get array cookbook info on  indexed array item .specifically property .name 
-		}
-
-
-	</script>
-
-
-
-</body>
+		booklist();
+		</script>
+	</body>
 </html>
-<!-- 
-	Recipes!
-		Name of Dish
-		List of Ingridients
-		Preparation Time
-
-	3 inputs needed for the recipes properties // inputs are on html docs because its where the client side can enter info
-	button to save recipes
-		to add to an array/to store it in our cookBook
-
-	search for a specific recipe within cook book 
-		edit it 
-		delete it 
-
-	Display list of recipes
-		name includes (ingredients separated by 'and'). It takes duration to cook. 
-		go through cookbook (loop thru array )
-			getting recipes name, ingredients, duration
-
-			//what will I do for the incrementation of the loop.
- -->
