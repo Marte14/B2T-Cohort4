@@ -21,7 +21,7 @@
 	<ul id="booklist"></ul>
 
 		<script>
-			 //used to hold books
+			 
 			var bookList  = [
 
 			  { author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
@@ -35,11 +35,11 @@
 			function booklist(){
 				document.getElementById('booklist').innerHTML = '';
 				
-				for(var i=0; i<bookList.length; i++){// this i is that element 
+				for(var i=0; i<bookList.length; i++){ 
 				if( bookList[i].readingStatus == true){
 					document.getElementById('booklist').innerHTML += '<li>You Have Read ' +bookList[i].title + " Writen by " + bookList[i].author + '</li>';
 				}else{
-					document.getElementById('booklist').innerHTML += '<li>'+'You Have To Still Read ' +bookList[i].title + " by " + bookList[i].author + '</li>';
+					document.getElementById('booklist').innerHTML += '<li>'+'You Have To Still Read ' +bookList[i].title + " Writen by " + bookList[i].author + '</li>';
 				};	
 			}
 			
