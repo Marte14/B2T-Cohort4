@@ -4,14 +4,15 @@
 		<title></title>
 	</head>
 	<body>
-		<h2 id="name">Reveal Your Name!</h2>
+		<!-- <h2 id="name">Reveal Your Name!</h2> -->
+		<input type="text" id="title" placeholder="Title">
 		<input onclick="myName()" type="button" value="Click to Play">
 
 
 		<script>
 			function myName(){
-				var name=prompt("What's your name: ")
-				document.getElementById("name").innerHTML="Hello, My name is " + name + '.';
+				var name=document.getElementById("title");
+				title.innerHTML="Hello, My name is " + name + '.';
 
 			}
 		</script>
